@@ -1,12 +1,18 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: [
+    "src/index.ts",
+    "src/lib/utils.ts",
+    "src/hooks/use-mobile.tsx",
+    "src/components/ui/*.tsx",
+  ],
   format: ["esm"],
   dts: true,
-  splitting: false,
+  splitting: true,
   sourcemap: true,
   clean: true,
+  outDir: "dist",
   external: [
     "react",
     "react-dom",
