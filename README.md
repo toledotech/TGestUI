@@ -46,8 +46,38 @@ consumidores pegam a atualização rodando `npm update @toledotech/tgest-ui`.
 ## Escopo
 
 Contém: os 46 componentes base do shadcn/ui (Radix + `class-variance-authority` +
-`tailwind-merge`), o helper `cn()` e o hook `useIsMobile`.
+`tailwind-merge`), o helper `cn()`, o hook `useIsMobile`, e o `AppTopbar` — o header
+global do ecossistema ToledoTech (ver `design_system.md`, seção 4).
 
 Não contém: componentes específicos de um produto (ex: `initials-avatar` do M8HUB ficou
 de fora de propósito), nem tokens de tema/cor — cada produto mantém sua própria identidade
 visual via `@theme`.
+
+## AppTopbar
+
+Header global (largura total, acima da sidebar) com título centralizado, sino de
+notificações e dropdown de usuário — a versão Tailwind/shadcn do padrão implementado
+em CSS puro no TGestVeic.
+
+```tsx
+import { AppTopbar, SidebarProvider, Sidebar } from "@toledotech/tgest-ui";
+
+<SidebarProvider>
+  <AppTopbar
+    title="TGestCRM"
+    slogan="- Gestão de Relacionamento"
+    user={{ name: "Fabio Toledo", role: "Super Admin", email: "user@toledotech.com.br" }}
+    notificationCount={2}
+    onProfileClick={() => {/* ... */}}
+    onLogout={() => {/* ... */}}
+  />
+  <div className="flex flex-1">
+    <Sidebar>{/* ... */}</Sidebar>
+    <main>{/* conteúdo */}</main>
+  </div>
+</SidebarProvider>
+```
+
+Usa os mesmos tokens `--sidebar` / `--sidebar-foreground` que o componente `Sidebar` do
+shadcn já exige — não precisa de tokens novos, só herda a cor navy definida no `@theme`
+do projeto consumidor.

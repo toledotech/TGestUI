@@ -24,6 +24,10 @@
       "types": "./dist/components/ui/alert.d.ts",
       "import": "./dist/components/ui/alert.js"
     },
+    "./app-topbar": {
+      "types": "./dist/components/ui/app-topbar.d.ts",
+      "import": "./dist/components/ui/app-topbar.js"
+    },
     "./aspect-ratio": {
       "types": "./dist/components/ui/aspect-ratio.d.ts",
       "import": "./dist/components/ui/aspect-ratio.js"

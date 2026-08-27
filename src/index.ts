@@ -1,6 +1,7 @@
 export * from "./components/ui/accordion";
 export * from "./components/ui/alert-dialog";
 export * from "./components/ui/alert";
+export * from "./components/ui/app-topbar";
 export * from "./components/ui/aspect-ratio";
 export * from "./components/ui/avatar";
 export * from "./components/ui/badge";
