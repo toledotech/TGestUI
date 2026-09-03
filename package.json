@@ -16,13 +16,13 @@
       "types": "./dist/components/ui/accordion.d.ts",
       "import": "./dist/components/ui/accordion.js"
     },
-    "./alert-dialog": {
-      "types": "./dist/components/ui/alert-dialog.d.ts",
-      "import": "./dist/components/ui/alert-dialog.js"
-    },
     "./alert": {
       "types": "./dist/components/ui/alert.d.ts",
       "import": "./dist/components/ui/alert.js"
+    },
+    "./alert-dialog": {
+      "types": "./dist/components/ui/alert-dialog.d.ts",
+      "import": "./dist/components/ui/alert-dialog.js"
     },
     "./app-topbar": {
       "types": "./dist/components/ui/app-topbar.d.ts",
@@ -100,13 +100,13 @@
       "types": "./dist/components/ui/hover-card.d.ts",
       "import": "./dist/components/ui/hover-card.js"
     },
-    "./input-otp": {
-      "types": "./dist/components/ui/input-otp.d.ts",
-      "import": "./dist/components/ui/input-otp.js"
-    },
     "./input": {
       "types": "./dist/components/ui/input.d.ts",
       "import": "./dist/components/ui/input.js"
+    },
+    "./input-otp": {
+      "types": "./dist/components/ui/input-otp.d.ts",
+      "import": "./dist/components/ui/input-otp.js"
     },
     "./label": {
       "types": "./dist/components/ui/label.d.ts",
@@ -188,13 +188,13 @@
       "types": "./dist/components/ui/textarea.d.ts",
       "import": "./dist/components/ui/textarea.js"
     },
-    "./toggle-group": {
-      "types": "./dist/components/ui/toggle-group.d.ts",
-      "import": "./dist/components/ui/toggle-group.js"
-    },
     "./toggle": {
       "types": "./dist/components/ui/toggle.d.ts",
       "import": "./dist/components/ui/toggle.js"
+    },
+    "./toggle-group": {
+      "types": "./dist/components/ui/toggle-group.d.ts",
+      "import": "./dist/components/ui/toggle-group.js"
     },
     "./tooltip": {
       "types": "./dist/components/ui/tooltip.d.ts",
@@ -213,8 +213,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "prepare": "tsup",
+    "generate-exports": "node scripts/generate-exports.mjs",
+    "build": "npm run generate-exports && tsup",
+    "prepare": "npm run build",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit"
   },
