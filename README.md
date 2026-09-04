@@ -1,10 +1,11 @@
 # @toledotech/tgest-ui
 
 Componentes de UI (Radix + shadcn) compartilhados entre os produtos ToledoTech que usam
-Vite + React 19 + Tailwind 4 + Radix UI (família A: M8HUB, TGestCRM, TGestEvent).
+Vite + React 19 + Tailwind 4 + Radix UI (família A: TGestCRM, TGestEvent).
 
-Extraído do conjunto idêntico de `src/components/ui/*` que esses três projetos mantinham
-duplicado byte a byte.
+Extraído do conjunto idêntico de `src/components/ui/*` que esses projetos mantinham
+duplicado byte a byte (originalmente incluía também o M8HUB, descontinuado em 04/09/2026
+e incorporado ao TGestCRM).
 
 ## Instalação nos projetos consumidores
 
@@ -49,9 +50,9 @@ Contém: os 46 componentes base do shadcn/ui (Radix + `class-variance-authority`
 `tailwind-merge`), o helper `cn()`, o hook `useIsMobile`, e o `AppTopbar` — o header
 global do ecossistema ToledoTech (ver `design_system.md`, seção 4).
 
-Não contém: componentes específicos de um produto (ex: `initials-avatar` do M8HUB ficou
-de fora de propósito), nem tokens de tema/cor — cada produto mantém sua própria identidade
-visual via `@theme`.
+Não contém: componentes específicos de um produto (ex: um `initials-avatar` de uso único
+ficou de fora de propósito), nem tokens de tema/cor — cada produto mantém sua própria
+identidade visual via `@theme`.
 
 ## AppTopbar
 
